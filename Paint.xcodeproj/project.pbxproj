@@ -1,0 +1,586 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A952815DD05F112697FF0CE /* Painter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BFCAF6B452673DC893499 /* Painter.swift */; };
+		0CB07C4CE3944D87C5BA0ABD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 69E042E44A51569BC32E3F9B /* Assets.xcassets */; };
+		157CF098A45DD7B67FDFCBF7 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9A4AB70D91196BF3475EAF /* MainMenu.swift */; };
+		26A511C08E927B1AFF721930 /* Tool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68A35E124D5B5C47F25D494C /* Tool.swift */; };
+		3730847216F193BFF4C9FD81 /* Palette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AA5F309DB58B6CC1816789 /* Palette.swift */; };
+		42695A671CB92D80EF8AF4DA /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BC72FFD19562C333A60A0A /* main.swift */; };
+		4891B9DDE31F0D644AE979FB /* ToolKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFA926E334576508B699E30 /* ToolKind.swift */; };
+		4A2BA4C28269A63BE8BE6091 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3C1C00213D2E3BE79DA /* StatusBarView.swift */; };
+		515F33AFE22EB1C55200F809 /* PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691A865ECEAC89998CCEAAB /* PixelBuffer.swift */; };
+		59A2EB7368B19EE5EAFB0341 /* SelectionTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A0DD3147610BF5D9575EE /* SelectionTools.swift */; };
+		59FBBD00B67BE28B43D90312 /* ToolOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCACCFB300E219A31AA08164 /* ToolOptionsView.swift */; };
+		5C254BB8A7663FA9ED3CDF29 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF74013571FA629E407716B /* Brush.swift */; };
+		78B29FFF9438325FD13961E8 /* DocumentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03321E88C88CC61E299A9AC4 /* DocumentTests.swift */; };
+		86F8D07AE8084B612D4CCC37 /* ToolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B9072F746C84BEB27E9EE4 /* ToolButton.swift */; };
+		9273A630977E6EA12AA590ED /* RasterCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62971FE0AB14C8738178B051 /* RasterCoreTests.swift */; };
+		9654D2C51DA9E6060E0C2173 /* ToolIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81A289A02137B58706C78B /* ToolIcons.swift */; };
+		966B2E4DEA4636A4B976A791 /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8F48C383A8DE86413E7A /* PaletteView.swift */; };
+		98CFF56308AA7F371A615F2A /* ShapeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC4166ABCA5CA2B36E5E2A /* ShapeTools.swift */; };
+		A2C8AEAB176129D65AC12856 /* PaintWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B202C33F1A307874AF09AE4 /* PaintWindowController.swift */; };
+		B7387093682E2627A53ECF92 /* FloodFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CE182577A3C8407BCD3E /* FloodFill.swift */; };
+		B8747F1C33AEA96A8EB098C7 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA53D9EB3EEDF0D2F86BD8 /* CanvasView.swift */; };
+		B9FE33518FFF9374D919C474 /* ToolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D46B31116EF5CF81E5E3245 /* ToolTests.swift */; };
+		BC3317893F520D97A5AAEDB6 /* CenteringClipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C254B7A0253ACCE00BCD6A /* CenteringClipView.swift */; };
+		CC64D97F640408DA6FBB9793 /* ToolboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B97E954DFD046E9157FD8E /* ToolboxView.swift */; };
+		CDB968DAFB212BCDC1FE7A67 /* PaintDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A01379B4E822AF1F768B4E /* PaintDocument.swift */; };
+		CDFBF40BA8F5745A6AD88A66 /* Raster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364A8BB456FA20066FB1584 /* Raster.swift */; };
+		E28762B10D60C565B2CAF054 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB00B21742B6BB6BFEF7878 /* Selection.swift */; };
+		E4403BAA8ABE689C560F86E7 /* PaintSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FF6AA22949A71255A3046 /* PaintSettings.swift */; };
+		E89FFFC32812932C4C604417 /* ImageDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D92623042EE9134B569A30 /* ImageDialogs.swift */; };
+		EA247B4ACAEC52D62915E594 /* DrawingTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D416B8FCA982318B5704196D /* DrawingTools.swift */; };
+		FD1C9CF03F196051416A4176 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77025991B321C478485CFF3A /* AppDelegate.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		295E8B513BF1F2F13425C823 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EA17ADCA848A3ADCC594C86B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7A01A2BA06B332F0695F3A76;
+			remoteInfo = Paint;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00B9072F746C84BEB27E9EE4 /* ToolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolButton.swift; sourceTree = "<group>"; };
+		03321E88C88CC61E299A9AC4 /* DocumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentTests.swift; sourceTree = "<group>"; };
+		0F8BFCAF6B452673DC893499 /* Painter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Painter.swift; sourceTree = "<group>"; };
+		181FF6AA22949A71255A3046 /* PaintSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintSettings.swift; sourceTree = "<group>"; };
+		1C31CE182577A3C8407BCD3E /* FloodFill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloodFill.swift; sourceTree = "<group>"; };
+		2691A865ECEAC89998CCEAAB /* PixelBuffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelBuffer.swift; sourceTree = "<group>"; };
+		2B202C33F1A307874AF09AE4 /* PaintWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintWindowController.swift; sourceTree = "<group>"; };
+		4268F3C1C00213D2E3BE79DA /* StatusBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarView.swift; sourceTree = "<group>"; };
+		45BC72FFD19562C333A60A0A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		49BA53D9EB3EEDF0D2F86BD8 /* CanvasView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasView.swift; sourceTree = "<group>"; };
+		50FBDC2F051B1CD2950FB74B /* Paint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Paint.entitlements; sourceTree = "<group>"; };
+		57AA5F309DB58B6CC1816789 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
+		5D46B31116EF5CF81E5E3245 /* ToolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTests.swift; sourceTree = "<group>"; };
+		61A7F897A715FE23C00925C4 /* PaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		62971FE0AB14C8738178B051 /* RasterCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasterCoreTests.swift; sourceTree = "<group>"; };
+		6364A8BB456FA20066FB1584 /* Raster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raster.swift; sourceTree = "<group>"; };
+		64C254B7A0253ACCE00BCD6A /* CenteringClipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CenteringClipView.swift; sourceTree = "<group>"; };
+		68A35E124D5B5C47F25D494C /* Tool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tool.swift; sourceTree = "<group>"; };
+		69E042E44A51569BC32E3F9B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6C81A289A02137B58706C78B /* ToolIcons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolIcons.swift; sourceTree = "<group>"; };
+		6DF74013571FA629E407716B /* Brush.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Brush.swift; sourceTree = "<group>"; };
+		77025991B321C478485CFF3A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		83B97E954DFD046E9157FD8E /* ToolboxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolboxView.swift; sourceTree = "<group>"; };
+		89EC4166ABCA5CA2B36E5E2A /* ShapeTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeTools.swift; sourceTree = "<group>"; };
+		952E8F48C383A8DE86413E7A /* PaletteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaletteView.swift; sourceTree = "<group>"; };
+		A09A0DD3147610BF5D9575EE /* SelectionTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionTools.swift; sourceTree = "<group>"; };
+		ACFA926E334576508B699E30 /* ToolKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolKind.swift; sourceTree = "<group>"; };
+		C3CCB3ABC8262229F854C120 /* Paint.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Paint.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCACCFB300E219A31AA08164 /* ToolOptionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolOptionsView.swift; sourceTree = "<group>"; };
+		CEB00B21742B6BB6BFEF7878 /* Selection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selection.swift; sourceTree = "<group>"; };
+		D416B8FCA982318B5704196D /* DrawingTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTools.swift; sourceTree = "<group>"; };
+		E0A01379B4E822AF1F768B4E /* PaintDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintDocument.swift; sourceTree = "<group>"; };
+		E3D92623042EE9134B569A30 /* ImageDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDialogs.swift; sourceTree = "<group>"; };
+		EBA8EB59EA2250601F307ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ED9A4AB70D91196BF3475EAF /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		06663BBE0B34FDA16DC460A2 /* PaintTests */ = {
+			isa = PBXGroup;
+			children = (
+				03321E88C88CC61E299A9AC4 /* DocumentTests.swift */,
+				62971FE0AB14C8738178B051 /* RasterCoreTests.swift */,
+				5D46B31116EF5CF81E5E3245 /* ToolTests.swift */,
+			);
+			path = PaintTests;
+			sourceTree = "<group>";
+		};
+		1E462130CF053B66828A91D4 = {
+			isa = PBXGroup;
+			children = (
+				6362A30BAFCC59A95C25C9E7 /* Paint */,
+				06663BBE0B34FDA16DC460A2 /* PaintTests */,
+				8A3C46C40C785B861822ECA4 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DD054549DBC3B7FCFDB3489 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				64C254B7A0253ACCE00BCD6A /* CenteringClipView.swift */,
+				00B9072F746C84BEB27E9EE4 /* ToolButton.swift */,
+				6C81A289A02137B58706C78B /* ToolIcons.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		41EC2E8D39CF39D5683414EE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6DF74013571FA629E407716B /* Brush.swift */,
+				1C31CE182577A3C8407BCD3E /* FloodFill.swift */,
+				E0A01379B4E822AF1F768B4E /* PaintDocument.swift */,
+				0F8BFCAF6B452673DC893499 /* Painter.swift */,
+				181FF6AA22949A71255A3046 /* PaintSettings.swift */,
+				57AA5F309DB58B6CC1816789 /* Palette.swift */,
+				2691A865ECEAC89998CCEAAB /* PixelBuffer.swift */,
+				6364A8BB456FA20066FB1584 /* Raster.swift */,
+				CEB00B21742B6BB6BFEF7878 /* Selection.swift */,
+				ACFA926E334576508B699E30 /* ToolKind.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		6362A30BAFCC59A95C25C9E7 /* Paint */ = {
+			isa = PBXGroup;
+			children = (
+				E980D5488D7B5AE8DB937F1B /* App */,
+				3DD054549DBC3B7FCFDB3489 /* Components */,
+				C526A12753F5BBB4F580540E /* Dialogs */,
+				41EC2E8D39CF39D5683414EE /* Models */,
+				CB8BAA6D480A8452D094196C /* Tools */,
+				71DF7A16D0CFD3A127839EA6 /* Views */,
+				69E042E44A51569BC32E3F9B /* Assets.xcassets */,
+				EBA8EB59EA2250601F307ECE /* Info.plist */,
+				50FBDC2F051B1CD2950FB74B /* Paint.entitlements */,
+			);
+			path = Paint;
+			sourceTree = "<group>";
+		};
+		71DF7A16D0CFD3A127839EA6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				49BA53D9EB3EEDF0D2F86BD8 /* CanvasView.swift */,
+				2B202C33F1A307874AF09AE4 /* PaintWindowController.swift */,
+				952E8F48C383A8DE86413E7A /* PaletteView.swift */,
+				4268F3C1C00213D2E3BE79DA /* StatusBarView.swift */,
+				83B97E954DFD046E9157FD8E /* ToolboxView.swift */,
+				CCACCFB300E219A31AA08164 /* ToolOptionsView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8A3C46C40C785B861822ECA4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3CCB3ABC8262229F854C120 /* Paint.app */,
+				61A7F897A715FE23C00925C4 /* PaintTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C526A12753F5BBB4F580540E /* Dialogs */ = {
+			isa = PBXGroup;
+			children = (
+				E3D92623042EE9134B569A30 /* ImageDialogs.swift */,
+			);
+			path = Dialogs;
+			sourceTree = "<group>";
+		};
+		CB8BAA6D480A8452D094196C /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				D416B8FCA982318B5704196D /* DrawingTools.swift */,
+				A09A0DD3147610BF5D9575EE /* SelectionTools.swift */,
+				89EC4166ABCA5CA2B36E5E2A /* ShapeTools.swift */,
+				68A35E124D5B5C47F25D494C /* Tool.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		E980D5488D7B5AE8DB937F1B /* App */ = {
+			isa = PBXGroup;
+			children = (
+				77025991B321C478485CFF3A /* AppDelegate.swift */,
+				45BC72FFD19562C333A60A0A /* main.swift */,
+				ED9A4AB70D91196BF3475EAF /* MainMenu.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6CA1506CCECB073831487A1E /* PaintTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F36442D4327E1AC0A0474027 /* Build configuration list for PBXNativeTarget "PaintTests" */;
+			buildPhases = (
+				B42DE2C533333A49EEC17A78 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E86C0999BF7C36E96FC0A55 /* PBXTargetDependency */,
+			);
+			name = PaintTests;
+			packageProductDependencies = (
+			);
+			productName = PaintTests;
+			productReference = 61A7F897A715FE23C00925C4 /* PaintTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		7A01A2BA06B332F0695F3A76 /* Paint */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B290D332B66BC4C142091555 /* Build configuration list for PBXNativeTarget "Paint" */;
+			buildPhases = (
+				28C6F2DA9D320C504E86AB86 /* Sources */,
+				F3E6EB59396AFAA77B37C205 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Paint;
+			packageProductDependencies = (
+			);
+			productName = Paint;
+			productReference = C3CCB3ABC8262229F854C120 /* Paint.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA17ADCA848A3ADCC594C86B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					7A01A2BA06B332F0695F3A76 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 97A4D9DFE68979D90E0F0F0E /* Build configuration list for PBXProject "Paint" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 1E462130CF053B66828A91D4;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 8A3C46C40C785B861822ECA4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7A01A2BA06B332F0695F3A76 /* Paint */,
+				6CA1506CCECB073831487A1E /* PaintTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F3E6EB59396AFAA77B37C205 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CB07C4CE3944D87C5BA0ABD /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		28C6F2DA9D320C504E86AB86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD1C9CF03F196051416A4176 /* AppDelegate.swift in Sources */,
+				5C254BB8A7663FA9ED3CDF29 /* Brush.swift in Sources */,
+				B8747F1C33AEA96A8EB098C7 /* CanvasView.swift in Sources */,
+				BC3317893F520D97A5AAEDB6 /* CenteringClipView.swift in Sources */,
+				EA247B4ACAEC52D62915E594 /* DrawingTools.swift in Sources */,
+				B7387093682E2627A53ECF92 /* FloodFill.swift in Sources */,
+				E89FFFC32812932C4C604417 /* ImageDialogs.swift in Sources */,
+				157CF098A45DD7B67FDFCBF7 /* MainMenu.swift in Sources */,
+				CDB968DAFB212BCDC1FE7A67 /* PaintDocument.swift in Sources */,
+				E4403BAA8ABE689C560F86E7 /* PaintSettings.swift in Sources */,
+				A2C8AEAB176129D65AC12856 /* PaintWindowController.swift in Sources */,
+				0A952815DD05F112697FF0CE /* Painter.swift in Sources */,
+				3730847216F193BFF4C9FD81 /* Palette.swift in Sources */,
+				966B2E4DEA4636A4B976A791 /* PaletteView.swift in Sources */,
+				515F33AFE22EB1C55200F809 /* PixelBuffer.swift in Sources */,
+				CDFBF40BA8F5745A6AD88A66 /* Raster.swift in Sources */,
+				E28762B10D60C565B2CAF054 /* Selection.swift in Sources */,
+				59A2EB7368B19EE5EAFB0341 /* SelectionTools.swift in Sources */,
+				98CFF56308AA7F371A615F2A /* ShapeTools.swift in Sources */,
+				4A2BA4C28269A63BE8BE6091 /* StatusBarView.swift in Sources */,
+				26A511C08E927B1AFF721930 /* Tool.swift in Sources */,
+				86F8D07AE8084B612D4CCC37 /* ToolButton.swift in Sources */,
+				9654D2C51DA9E6060E0C2173 /* ToolIcons.swift in Sources */,
+				4891B9DDE31F0D644AE979FB /* ToolKind.swift in Sources */,
+				59FBBD00B67BE28B43D90312 /* ToolOptionsView.swift in Sources */,
+				CC64D97F640408DA6FBB9793 /* ToolboxView.swift in Sources */,
+				42695A671CB92D80EF8AF4DA /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B42DE2C533333A49EEC17A78 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				78B29FFF9438325FD13961E8 /* DocumentTests.swift in Sources */,
+				9273A630977E6EA12AA590ED /* RasterCoreTests.swift in Sources */,
+				B9FE33518FFF9374D919C474 /* ToolTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E86C0999BF7C36E96FC0A55 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 7A01A2BA06B332F0695F3A76 /* Paint */;
+			targetProxy = 295E8B513BF1F2F13425C823 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		04DA69C00981C7460DA08152 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.makio.paint.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paint.app/Contents/MacOS/Paint";
+			};
+			name = Release;
+		};
+		36DC8A50D097018A9F87CB6C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7083532ED9C450F432C479C1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		75698305BC14A6C6C98ADCEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.makio.paint.tests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Paint.app/Contents/MacOS/Paint";
+			};
+			name = Debug;
+		};
+		D758984AF3C48CA556D7C620 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Paint/Paint.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_TESTABILITY = YES;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Paint/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.makio.paint;
+				PRODUCT_NAME = Paint;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Debug;
+		};
+		FE9B64234CADF1EF6C09661C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Paint/Paint.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Paint/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = app.makio.paint;
+				PRODUCT_NAME = Paint;
+				SDKROOT = macosx;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		97A4D9DFE68979D90E0F0F0E /* Build configuration list for PBXProject "Paint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				36DC8A50D097018A9F87CB6C /* Debug */,
+				7083532ED9C450F432C479C1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B290D332B66BC4C142091555 /* Build configuration list for PBXNativeTarget "Paint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D758984AF3C48CA556D7C620 /* Debug */,
+				FE9B64234CADF1EF6C09661C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F36442D4327E1AC0A0474027 /* Build configuration list for PBXNativeTarget "PaintTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				75698305BC14A6C6C98ADCEA /* Debug */,
+				04DA69C00981C7460DA08152 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA17ADCA848A3ADCC594C86B /* Project object */;
+}

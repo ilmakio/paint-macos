@@ -1,0 +1,68 @@
+name: Paint
+options:
+  bundleIdPrefix: app.makio
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+  minimumXcodeGenVersion: "2.38.0"
+
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MARKETING_VERSION: "1.0.0"
+    CURRENT_PROJECT_VERSION: "1"
+    ALWAYS_SEARCH_USER_PATHS: NO
+    CLANG_ENABLE_OBJC_ARC: YES
+    ENABLE_STRICT_OBJC_MSGSEND: YES
+    SWIFT_STRICT_CONCURRENCY: minimal
+
+targets:
+  Paint:
+    type: application
+    platform: macOS
+    sources:
+      - path: Paint
+    settings:
+      base:
+        PRODUCT_NAME: Paint
+        PRODUCT_BUNDLE_IDENTIFIER: app.makio.paint
+        INFOPLIST_FILE: Paint/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        CODE_SIGN_ENTITLEMENTS: Paint/Paint.entitlements
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "-"
+        ENABLE_HARDENED_RUNTIME: NO
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        COMBINE_HIDPI_IMAGES: YES
+        SWIFT_EMIT_LOC_STRINGS: YES
+        DEAD_CODE_STRIPPING: YES
+      configs:
+        Debug:
+          ENABLE_TESTABILITY: YES
+
+  PaintTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: PaintTests
+    dependencies:
+      - target: Paint
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.makio.paint.tests
+        GENERATE_INFOPLIST_FILE: YES
+        CODE_SIGN_IDENTITY: "-"
+
+schemes:
+  Paint:
+    build:
+      targets:
+        Paint: all
+        PaintTests: [test]
+    run:
+      config: Debug
+    test:
+      config: Debug
+      targets:
+        - PaintTests

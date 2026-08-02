@@ -1,0 +1,64 @@
+name: Release
+
+# Tag a commit with v1.2.3 and push the tag; this builds the app, zips it, and
+# opens a GitHub release with the binary attached.
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish
+    runs-on: macos-15
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install xcodegen
+        run: brew install xcodegen
+
+      - name: Generate the Xcode project
+        run: xcodegen generate
+
+      - name: Build
+        run: |
+          xcodebuild build \
+            -project Paint.xcodeproj \
+            -scheme Paint \
+            -configuration Release \
+            -destination 'platform=macOS' \
+            -derivedDataPath .build
+
+      # ditto preserves the bundle's symlinks and metadata; plain `zip` does not.
+      - name: Package
+        run: ditto -c -k --keepParent .build/Build/Products/Release/Paint.app Paint.zip
+
+      - name: Write release notes
+        run: |
+          {
+            echo 'Unzip and drag `Paint.app` into `/Applications`.'
+            echo
+            echo 'The build is not notarised, so the first launch needs one extra step:'
+            echo 'right-click the app and choose **Open → Open**. Alternatively, clear'
+            echo 'the quarantine flag:'
+            echo
+            echo '```'
+            echo 'xattr -dr com.apple.quarantine /Applications/Paint.app'
+            echo '```'
+            echo
+            echo 'See [CHANGELOG.md](https://github.com/ilmakio/paint-macos/blob/main/CHANGELOG.md) for what changed.'
+          } > notes.md
+
+      - name: Publish
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" Paint.zip \
+            --title "${GITHUB_REF_NAME}" \
+            --notes-file notes.md
