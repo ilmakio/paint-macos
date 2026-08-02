@@ -2,6 +2,18 @@ name: Release
 
 # Tag a commit with v1.2.3 and push the tag; this builds the app, zips it, and
 # opens a GitHub release with the binary attached.
+#
+# If the signing secrets below are configured, the build is signed with the
+# Developer ID certificate and notarised, so it opens with a double-click.
+# Without them — in a fork, say — it falls back to an ad-hoc build and the
+# release notes say so.
+#
+#   MACOS_CERTIFICATE_P12       base64 of the exported .p12
+#   MACOS_CERTIFICATE_PASSWORD  the password used when exporting it
+#   KEYCHAIN_PASSWORD           any throwaway string
+#   APPLE_ID                    Apple ID used for notarisation
+#   APPLE_TEAM_ID               10-character team identifier
+#   APPLE_APP_SPECIFIC_PASSWORD app-specific password from appleid.apple.com
 on:
   push:
     tags: ['v*']
@@ -23,34 +35,80 @@ jobs:
       - name: Install xcodegen
         run: brew install xcodegen
 
-      - name: Generate the Xcode project
-        run: xcodegen generate
-
-      - name: Build
+      - name: Check for signing secrets
+        id: signing
+        env:
+          CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE_P12 }}
         run: |
+          if [ -n "$CERTIFICATE" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::warning::No signing certificate configured — publishing an ad-hoc build."
+          fi
+
+      - name: Import the signing certificate
+        if: steps.signing.outputs.enabled == 'true'
+        env:
+          CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE_P12 }}
+          CERTIFICATE_PASSWORD: ${{ secrets.MACOS_CERTIFICATE_PASSWORD }}
+          KEYCHAIN_PASSWORD: ${{ secrets.KEYCHAIN_PASSWORD }}
+        run: |
+          # A throwaway keychain keeps the key off the runner's login keychain
+          # and it disappears with the VM.
+          echo "$CERTIFICATE" | base64 --decode > "$RUNNER_TEMP/cert.p12"
+          security create-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
+          security default-keychain -s build.keychain
+          security unlock-keychain -p "$KEYCHAIN_PASSWORD" build.keychain
+          security set-keychain-settings -t 3600 -u build.keychain
+          security import "$RUNNER_TEMP/cert.p12" -k build.keychain \
+            -P "$CERTIFICATE_PASSWORD" -T /usr/bin/codesign -T /usr/bin/productsign
+          security set-key-partition-list -S apple-tool:,apple:,codesign: \
+            -s -k "$KEYCHAIN_PASSWORD" build.keychain > /dev/null
+          rm -f "$RUNNER_TEMP/cert.p12"
+          security find-identity -v -p codesigning
+
+      - name: Build, sign and notarise
+        if: steps.signing.outputs.enabled == 'true'
+        env:
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+        run: ./Scripts/package-release.sh
+
+      - name: Build unsigned
+        if: steps.signing.outputs.enabled == 'false'
+        run: |
+          xcodegen generate
           xcodebuild build \
             -project Paint.xcodeproj \
             -scheme Paint \
             -configuration Release \
             -destination 'platform=macOS' \
             -derivedDataPath .build
-
-      # ditto preserves the bundle's symlinks and metadata; plain `zip` does not.
-      - name: Package
-        run: ditto -c -k --keepParent .build/Build/Products/Release/Paint.app Paint.zip
+          mkdir -p dist
+          # ditto preserves the bundle's symlinks and metadata; plain `zip` does not.
+          ditto -c -k --keepParent .build/Build/Products/Release/Paint.app dist/Paint.zip
 
       - name: Write release notes
+        env:
+          SIGNED: ${{ steps.signing.outputs.enabled }}
         run: |
           {
             echo 'Unzip and drag `Paint.app` into `/Applications`.'
             echo
-            echo 'The build is not notarised, so the first launch needs one extra step:'
-            echo 'right-click the app and choose **Open → Open**. Alternatively, clear'
-            echo 'the quarantine flag:'
-            echo
-            echo '```'
-            echo 'xattr -dr com.apple.quarantine /Applications/Paint.app'
-            echo '```'
+            if [ "$SIGNED" = "true" ]; then
+              echo 'Signed with a Developer ID certificate and notarised by Apple,'
+              echo 'so it opens with a double-click.'
+            else
+              echo '⚠️ This build is **not** signed or notarised. On first launch,'
+              echo 'right-click the app and choose **Open → Open**, or clear the'
+              echo 'quarantine flag:'
+              echo
+              echo '```'
+              echo 'xattr -dr com.apple.quarantine /Applications/Paint.app'
+              echo '```'
+            fi
             echo
             echo 'See [CHANGELOG.md](https://github.com/ilmakio/paint-macos/blob/main/CHANGELOG.md) for what changed.'
           } > notes.md
@@ -59,6 +117,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
-          gh release create "${GITHUB_REF_NAME}" Paint.zip \
+          gh release create "${GITHUB_REF_NAME}" dist/Paint.zip \
             --title "${GITHUB_REF_NAME}" \
             --notes-file notes.md

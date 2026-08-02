@@ -48,6 +48,37 @@ Please include your macOS version, what you did, what you expected, and what
 happened instead. For anything visual, a screenshot at high zoom with the pixel
 grid on (`⇧⌘G`) is worth a lot — most drawing bugs are one pixel wide.
 
+## Cutting a release (maintainers)
+
+`Scripts/package-release.sh` does the whole thing: archive, export with the
+Developer ID identity, verify the signature and hardened runtime, submit to
+Apple's notary service, staple the ticket, and zip the result into `dist/`.
+
+It needs notary credentials, which it reads from a gitignored
+`.env.release.local` in the repo root:
+
+```sh
+APPLE_ID=you@example.com
+APPLE_TEAM_ID=AUNK4Y4APT
+APPLE_APP_SPECIFIC_PASSWORD=xxxx-xxxx-xxxx-xxxx
+```
+
+The last one comes from [appleid.apple.com](https://appleid.apple.com) ▸
+Sign-In and Security ▸ App-Specific Passwords. Then:
+
+```bash
+./Scripts/package-release.sh                 # sign, notarise, staple, zip
+./Scripts/package-release.sh --skip-notarize # signature only, for a quick check
+```
+
+Bump `MARKETING_VERSION` in `project.yml` and add a `CHANGELOG.md` entry first.
+
+The same thing can run on GitHub Actions: push a `v*` tag and `release.yml`
+builds and publishes. It signs and notarises when the repository has the six
+secrets listed at the top of that workflow, and falls back to an ad-hoc build
+(with a warning in the release notes) when it doesn't — so forks still get a
+working release job without anyone's private key.
+
 ## Scope
 
 Paint deliberately stops where the original stopped: one raster layer, no

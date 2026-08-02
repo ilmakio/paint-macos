@@ -27,12 +27,9 @@ pixel that changes.
 Download the latest `Paint.zip` from [Releases](https://github.com/ilmakio/paint-macos/releases),
 unzip it, and drag `Paint.app` into `/Applications`.
 
-The build is not notarised, so the first launch needs one extra step:
-**right-click the app → Open → Open**. Alternatively, clear the quarantine flag:
-
-```bash
-xattr -dr com.apple.quarantine /Applications/Paint.app
-```
+Releases are signed with a Developer ID certificate and notarised by Apple, so
+they open with a double-click — no right-click dance, no quarantine flag to
+clear.
 
 ### Building from source
 

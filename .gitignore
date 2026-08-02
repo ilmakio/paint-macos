@@ -12,5 +12,10 @@ xcuserdata/
 dist/
 *.zip
 
+# Notary credentials — never commit these
+.env
+.env.release
+.env.release.local
+
 # macOS
 .DS_Store

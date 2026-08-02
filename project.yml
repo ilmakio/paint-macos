@@ -32,6 +32,7 @@ targets:
         CODE_SIGN_ENTITLEMENTS: Paint/Paint.entitlements
         CODE_SIGN_STYLE: Automatic
         CODE_SIGN_IDENTITY: "-"
+        DEVELOPMENT_TEAM: AUNK4Y4APT
         ENABLE_HARDENED_RUNTIME: NO
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         COMBINE_HIDPI_IMAGES: YES
@@ -40,6 +41,12 @@ targets:
       configs:
         Debug:
           ENABLE_TESTABILITY: YES
+        Release:
+          # Notarisation requires the hardened runtime, so it is always on for
+          # Release. Signing stays ad-hoc here on purpose: that keeps CI and a
+          # certificate-less checkout building. The Developer ID identity is
+          # applied at export time by Scripts/package-release.sh.
+          ENABLE_HARDENED_RUNTIME: YES
 
   PaintTests:
     type: bundle.unit-test
