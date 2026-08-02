@@ -32,11 +32,28 @@ jobs:
         with:
           fetch-depth: 0
 
+      # A maintainer who ran Scripts/package-release.sh locally has already
+      # published a notarised build under this tag. Don't overwrite it with an
+      # ad-hoc one just because pushing the tag woke this workflow up.
+      - name: Skip tags that already have a release
+        id: existing
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view "$GITHUB_REF_NAME" --json assets >/dev/null 2>&1; then
+            echo "found=true" >> "$GITHUB_OUTPUT"
+            echo "::notice::$GITHUB_REF_NAME already has a release; nothing to do."
+          else
+            echo "found=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Install xcodegen
+        if: steps.existing.outputs.found == 'false'
         run: brew install xcodegen
 
       - name: Check for signing secrets
         id: signing
+        if: steps.existing.outputs.found == 'false'
         env:
           CERTIFICATE: ${{ secrets.MACOS_CERTIFICATE_P12 }}
         run: |
@@ -91,6 +108,7 @@ jobs:
           ditto -c -k --keepParent .build/Build/Products/Release/Paint.app dist/Paint.zip
 
       - name: Write release notes
+        if: steps.existing.outputs.found == 'false'
         env:
           SIGNED: ${{ steps.signing.outputs.enabled }}
         run: |
@@ -114,6 +132,7 @@ jobs:
           } > notes.md
 
       - name: Publish
+        if: steps.existing.outputs.found == 'false'
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
