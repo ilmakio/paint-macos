@@ -234,6 +234,38 @@ final class CanvasView: NSView, ToolHost, PaintDocumentObserver {
         if let level, level != zoom { setZoom(level, anchor: anchor) }
     }
 
+    /// Accumulated ⌘-scroll travel, so a trackpad's stream of tiny deltas steps
+    /// one zoom level at a time instead of racing to 32× in a flick.
+    private var zoomScrollTravel: CGFloat = 0
+
+    override func scrollWheel(with event: NSEvent) {
+        guard event.modifierFlags.contains(.command) else {
+            zoomScrollTravel = 0
+            super.scrollWheel(with: event)
+            return
+        }
+        if event.phase == .began { zoomScrollTravel = 0 }
+
+        var delta = event.scrollingDeltaY
+        // A notched wheel reports whole lines; a trackpad reports pixels.
+        if !event.hasPreciseScrollingDeltas { delta *= 10 }
+        zoomScrollTravel += delta
+
+        let step: CGFloat = 30
+        while abs(zoomScrollTravel) >= step {
+            // Re-read the pixel under the cursor each step: the last zoom moved
+            // the canvas, so the anchor from before is stale.
+            let anchor = pixel(for: event)
+            if zoomScrollTravel > 0 {
+                zoomScrollTravel -= step
+                zoomIn(around: anchor)
+            } else {
+                zoomScrollTravel += step
+                zoomOut(around: anchor)
+            }
+        }
+    }
+
     // MARK: - Document observation
 
     func paintDocument(_ document: PaintDocument, didChangeImageIn rect: PixelRect) {

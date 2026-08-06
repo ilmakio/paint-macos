@@ -49,6 +49,11 @@ enum MainMenu {
         add(menu, "About Paint", #selector(NSApplication.orderFrontStandardAboutPanel(_:)))
         menu.addItem(.separator())
 
+        add(menu, "Check for Updates…", #selector(UpdateChecker.checkForUpdates(_:)),
+            target: UpdateChecker.shared)
+        add(menu, "Check Automatically", #selector(AppDelegate.toggleAutomaticUpdateChecks(_:)))
+        menu.addItem(.separator())
+
         let services = NSMenu(title: "Services")
         let servicesItem = NSMenuItem(title: "Services", action: nil, keyEquivalent: "")
         servicesItem.submenu = services

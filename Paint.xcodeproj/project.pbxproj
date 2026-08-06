@@ -16,6 +16,7 @@
 		4891B9DDE31F0D644AE979FB /* ToolKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACFA926E334576508B699E30 /* ToolKind.swift */; };
 		4A2BA4C28269A63BE8BE6091 /* StatusBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4268F3C1C00213D2E3BE79DA /* StatusBarView.swift */; };
 		515F33AFE22EB1C55200F809 /* PixelBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2691A865ECEAC89998CCEAAB /* PixelBuffer.swift */; };
+		598CECCC4DD844641BBBF8DC /* UpdateChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7646DA724C702F3426E935C /* UpdateChecker.swift */; };
 		59A2EB7368B19EE5EAFB0341 /* SelectionTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = A09A0DD3147610BF5D9575EE /* SelectionTools.swift */; };
 		59FBBD00B67BE28B43D90312 /* ToolOptionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCACCFB300E219A31AA08164 /* ToolOptionsView.swift */; };
 		5C254BB8A7663FA9ED3CDF29 /* Brush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF74013571FA629E407716B /* Brush.swift */; };
@@ -25,6 +26,7 @@
 		9654D2C51DA9E6060E0C2173 /* ToolIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C81A289A02137B58706C78B /* ToolIcons.swift */; };
 		966B2E4DEA4636A4B976A791 /* PaletteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8F48C383A8DE86413E7A /* PaletteView.swift */; };
 		98CFF56308AA7F371A615F2A /* ShapeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89EC4166ABCA5CA2B36E5E2A /* ShapeTools.swift */; };
+		995EE6806FDDFF2FADB7382D /* UpdateCheckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4D8399060452E38ECC10F03 /* UpdateCheckerTests.swift */; };
 		A2C8AEAB176129D65AC12856 /* PaintWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B202C33F1A307874AF09AE4 /* PaintWindowController.swift */; };
 		B7387093682E2627A53ECF92 /* FloodFill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C31CE182577A3C8407BCD3E /* FloodFill.swift */; };
 		B8747F1C33AEA96A8EB098C7 /* CanvasView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BA53D9EB3EEDF0D2F86BD8 /* CanvasView.swift */; };
@@ -86,6 +88,8 @@
 		D416B8FCA982318B5704196D /* DrawingTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingTools.swift; sourceTree = "<group>"; };
 		E0A01379B4E822AF1F768B4E /* PaintDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaintDocument.swift; sourceTree = "<group>"; };
 		E3D92623042EE9134B569A30 /* ImageDialogs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDialogs.swift; sourceTree = "<group>"; };
+		E4D8399060452E38ECC10F03 /* UpdateCheckerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCheckerTests.swift; sourceTree = "<group>"; };
+		E7646DA724C702F3426E935C /* UpdateChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateChecker.swift; sourceTree = "<group>"; };
 		EBA8EB59EA2250601F307ECE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		ED9A4AB70D91196BF3475EAF /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -97,6 +101,7 @@
 				03321E88C88CC61E299A9AC4 /* DocumentTests.swift */,
 				62971FE0AB14C8738178B051 /* RasterCoreTests.swift */,
 				5D46B31116EF5CF81E5E3245 /* ToolTests.swift */,
+				E4D8399060452E38ECC10F03 /* UpdateCheckerTests.swift */,
 			);
 			path = PaintTests;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				6364A8BB456FA20066FB1584 /* Raster.swift */,
 				CEB00B21742B6BB6BFEF7878 /* Selection.swift */,
 				ACFA926E334576508B699E30 /* ToolKind.swift */,
+				E7646DA724C702F3426E935C /* UpdateChecker.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -322,6 +328,7 @@
 				4891B9DDE31F0D644AE979FB /* ToolKind.swift in Sources */,
 				59FBBD00B67BE28B43D90312 /* ToolOptionsView.swift in Sources */,
 				CC64D97F640408DA6FBB9793 /* ToolboxView.swift in Sources */,
+				598CECCC4DD844641BBBF8DC /* UpdateChecker.swift in Sources */,
 				42695A671CB92D80EF8AF4DA /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,6 +340,7 @@
 				78B29FFF9438325FD13961E8 /* DocumentTests.swift in Sources */,
 				9273A630977E6EA12AA590ED /* RasterCoreTests.swift in Sources */,
 				B9FE33518FFF9374D919C474 /* ToolTests.swift in Sources */,
+				995EE6806FDDFF2FADB7382D /* UpdateCheckerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -399,7 +407,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -418,7 +426,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -465,7 +473,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -478,7 +486,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

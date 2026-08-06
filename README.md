@@ -91,7 +91,9 @@ to redefine it. `X` swaps the two, `D` restores black on white.
   <img src="docs/zoom-grid.png" alt="The same stroke at 8× zoom with the pixel grid on, showing individual pixels" width="820">
 </p>
 
-- Pinch, `⌘+` / `⌘−`, the magnifier, or the zoom menu — 25% up to 3200%.
+- Pinch, `⌘`-scroll, `⌘+` / `⌘−`, the magnifier, or the zoom menu — 25% up to
+  3200%. `⌘`-scroll zooms around the pointer, so the pixel under the cursor
+  stays put.
 - `⇧⌘G` shows the pixel grid at 4× and above.
 - Space-drag pans.
 - The white grips on the right and bottom edges resize the canvas; Image ▸
@@ -118,6 +120,7 @@ trip; the formats that cannot hold it are flattened onto white on the way out.
 | `⌘E` | Image attributes |
 | `⇧⌘I` | Invert colours |
 | `⌘R` / `⇧⌘R` | Rotate right / left |
+| `⌘`-scroll | Zoom around the pointer |
 | Shift while dragging | 45° lines, square and circular shapes |
 | Esc / Return | Abandon or close the shape in progress |
 
@@ -170,6 +173,19 @@ lifecycle, and every tool's drag behaviour. CI runs the same suite on every push
 Bug reports and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 The short version: keep the raster core free of AppKit, add a test for anything
 that touches pixels, and run the suite before opening a PR.
+
+## Updates
+
+Paint ▸ **Check for Updates…** asks GitHub whether a newer release exists and,
+if there is one, offers to open the download page. That is the whole feature:
+**it never downloads, unpacks or installs anything**, so nothing ever runs on
+your Mac that you didn't fetch and unzip yourself.
+
+It also checks quietly on launch, at most once a day, and says nothing unless
+there is something newer. Turn that off with Paint ▸ **Check Automatically**;
+the manual menu item keeps working either way. This is the only reason the app
+carries the `network.client` entitlement — Paint has no analytics and uploads
+nothing.
 
 ## Support
 

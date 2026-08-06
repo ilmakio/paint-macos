@@ -1,6 +1,6 @@
 import AppKit
 
-final class AppDelegate: NSObject, NSApplicationDelegate {
+final class AppDelegate: NSObject, NSApplicationDelegate, NSMenuItemValidation {
 
     func applicationWillFinishLaunching(_ notification: Notification) {
         NSApp.mainMenu = MainMenu.build()
@@ -8,6 +8,21 @@ final class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(_ notification: Notification) {
         NSApp.activate(ignoringOtherApps: true)
+        // Silent unless there is something newer, and no more than once a day.
+        UpdateChecker.shared.checkInBackgroundIfDue()
+    }
+
+    // MARK: Updates
+
+    @objc func toggleAutomaticUpdateChecks(_ sender: Any?) {
+        UpdateChecker.shared.checksAutomatically.toggle()
+    }
+
+    func validateMenuItem(_ menuItem: NSMenuItem) -> Bool {
+        if menuItem.action == #selector(toggleAutomaticUpdateChecks(_:)) {
+            menuItem.state = UpdateChecker.shared.checksAutomatically ? .on : .off
+        }
+        return true
     }
 
     func applicationShouldTerminateAfterLastWindowClosed(_ sender: NSApplication) -> Bool {
