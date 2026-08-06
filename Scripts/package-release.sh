@@ -46,6 +46,22 @@ TEAM_ID="${APPLE_TEAM_ID:-${DEVELOPMENT_TEAM:-$DEFAULT_TEAM_ID}}"
 step() { printf '\n\033[1m▸ %s\033[0m\n' "$1"; }
 fail() { printf '\033[31m✗ %s\033[0m\n' "$1" >&2; exit 1; }
 
+# Runs xcodebuild quietly, but surfaces the actual compiler errors when it
+# fails. Piping xcodebuild straight through grep hides the one line that
+# matters under a screenful of module-cache paths.
+run_xcodebuild() {
+  local log="$1"
+  shift
+  if "$@" > "$log" 2>&1; then
+    grep -E '^\*\*' "$log" | sed 's/^/  /' || true
+    return 0
+  fi
+  printf '\n\033[31m✗ xcodebuild failed:\033[0m\n' >&2
+  grep -E 'error:|^\*\* .* FAILED' "$log" | sort -u | head -20 | sed 's/^/    /' >&2
+  printf '\n    Full log: %s\n' "$log" >&2
+  exit 1
+}
+
 # ---------------------------------------------------------------- preflight
 
 command -v xcodegen >/dev/null || fail "xcodegen not found — brew install xcodegen"
@@ -72,7 +88,8 @@ step "Archiving (Release)"
 # Signing is deliberately left off the archive: Xcode treats automatic signing
 # as *development* signing, so a Developer ID identity set here fights the
 # project. The export step below applies it instead.
-xcodebuild archive \
+run_xcodebuild "$BUILD_DIR/archive.log" \
+  xcodebuild archive \
   -project Paint.xcodeproj \
   -scheme "$SCHEME" \
   -configuration Release \
@@ -80,8 +97,7 @@ xcodebuild archive \
   -archivePath "$ARCHIVE" \
   CODE_SIGN_IDENTITY="-" \
   CODE_SIGNING_ALLOWED=YES \
-  DEVELOPMENT_TEAM="$TEAM_ID" \
-  | grep -E "^(===|\*\*)" || true
+  DEVELOPMENT_TEAM="$TEAM_ID"
 
 [[ -d "$ARCHIVE" ]] || fail "Archive was not produced."
 
@@ -104,11 +120,11 @@ cat > "$EXPORT_PLIST" <<PLIST
 </plist>
 PLIST
 
-xcodebuild -exportArchive \
+run_xcodebuild "$BUILD_DIR/export.log" \
+  xcodebuild -exportArchive \
   -archivePath "$ARCHIVE" \
   -exportPath "$EXPORT_DIR" \
-  -exportOptionsPlist "$EXPORT_PLIST" \
-  | grep -E "^(===|\*\*|Exported)" || true
+  -exportOptionsPlist "$EXPORT_PLIST"
 
 [[ -d "$APP" ]] || fail "Export did not produce $APP_NAME."
 
