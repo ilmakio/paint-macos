@@ -5,6 +5,10 @@
 </p>
 
 <p align="center">
+  <a href="https://paint.makio.app"><strong>paint.makio.app</strong></a>
+</p>
+
+<p align="center">
   <a href="https://github.com/ilmakio/paint-macos/actions/workflows/ci.yml"><img src="https://github.com/ilmakio/paint-macos/actions/workflows/ci.yml/badge.svg" alt="CI"></a>
   <img src="https://img.shields.io/badge/macOS-14%2B-000000?logo=apple&logoColor=white" alt="macOS 14+">
   <img src="https://img.shields.io/badge/Swift-5-F05138?logo=swift&logoColor=white" alt="Swift 5">
@@ -24,8 +28,9 @@ pixel that changes.
 
 ## Install
 
-Download the latest `Paint.zip` from [Releases](https://github.com/ilmakio/paint-macos/releases),
-unzip it, and drag `Paint.app` into `/Applications`.
+Grab it from [paint.makio.app](https://paint.makio.app), or download the latest
+`Paint.zip` straight from [Releases](https://github.com/ilmakio/paint-macos/releases).
+Unzip it and drag `Paint.app` into `/Applications`.
 
 Releases are signed with a Developer ID certificate and notarised by Apple, so
 they open with a double-click — no right-click dance, no quarantine flag to
@@ -165,6 +170,11 @@ lifecycle, and every tool's drag behaviour. CI runs the same suite on every push
 Bug reports and pull requests are welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 The short version: keep the raster core free of AppKit, add a test for anything
 that touches pixels, and run the suite before opening a PR.
+
+## Support
+
+Paint is free and always will be. If it saved you a trip to a Windows VM, you can
+[buy me a coffee](https://ko-fi.com/ilmakio) — it is the only thing this project asks for.
 
 ## Licence
 
