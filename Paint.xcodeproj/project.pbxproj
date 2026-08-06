@@ -33,6 +33,7 @@
 		CC64D97F640408DA6FBB9793 /* ToolboxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B97E954DFD046E9157FD8E /* ToolboxView.swift */; };
 		CDB968DAFB212BCDC1FE7A67 /* PaintDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0A01379B4E822AF1F768B4E /* PaintDocument.swift */; };
 		CDFBF40BA8F5745A6AD88A66 /* Raster.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6364A8BB456FA20066FB1584 /* Raster.swift */; };
+		D40FE6BC677AC9E0B8D5A28D /* AppIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = 611A5B2F4CD266BD4D42901A /* AppIcon.icon */; };
 		E28762B10D60C565B2CAF054 /* Selection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB00B21742B6BB6BFEF7878 /* Selection.swift */; };
 		E4403BAA8ABE689C560F86E7 /* PaintSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 181FF6AA22949A71255A3046 /* PaintSettings.swift */; };
 		E89FFFC32812932C4C604417 /* ImageDialogs.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3D92623042EE9134B569A30 /* ImageDialogs.swift */; };
@@ -64,6 +65,7 @@
 		50FBDC2F051B1CD2950FB74B /* Paint.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Paint.entitlements; sourceTree = "<group>"; };
 		57AA5F309DB58B6CC1816789 /* Palette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palette.swift; sourceTree = "<group>"; };
 		5D46B31116EF5CF81E5E3245 /* ToolTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolTests.swift; sourceTree = "<group>"; };
+		611A5B2F4CD266BD4D42901A /* AppIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = wrapper.icon; path = AppIcon.icon; sourceTree = "<group>"; };
 		61A7F897A715FE23C00925C4 /* PaintTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PaintTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		62971FE0AB14C8738178B051 /* RasterCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RasterCoreTests.swift; sourceTree = "<group>"; };
 		6364A8BB456FA20066FB1584 /* Raster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Raster.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				41EC2E8D39CF39D5683414EE /* Models */,
 				CB8BAA6D480A8452D094196C /* Tools */,
 				71DF7A16D0CFD3A127839EA6 /* Views */,
+				611A5B2F4CD266BD4D42901A /* AppIcon.icon */,
 				69E042E44A51569BC32E3F9B /* Assets.xcassets */,
 				EBA8EB59EA2250601F307ECE /* Info.plist */,
 				50FBDC2F051B1CD2950FB74B /* Paint.entitlements */,
@@ -281,6 +284,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D40FE6BC677AC9E0B8D5A28D /* AppIcon.icon in Resources */,
 				0CB07C4CE3944D87C5BA0ABD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,7 +399,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -414,7 +418,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -461,7 +465,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -474,7 +478,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";

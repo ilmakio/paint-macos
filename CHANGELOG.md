@@ -4,6 +4,18 @@ All notable changes to this project are documented here. The format follows
 [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and the project uses
 [semantic versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.1] — 2026-08-06
+
+### Changed
+
+- New app icon, authored in Icon Composer, so it picks up the system's
+  material and lighting treatments instead of shipping a flat raster.
+
+### Removed
+
+- The old `AppIcon.appiconset` and its ten hand-rendered PNGs, now that the
+  `.icon` bundle supersedes them.
+
 ## [1.0.0] — 2026-08-02
 
 First public release.
@@ -30,4 +42,5 @@ First public release.
   selection move collapsing into a single step.
 - 75 tests covering the raster core, the document layer and every tool.
 
+[1.0.1]: https://github.com/ilmakio/paint-macos/releases/tag/v1.0.1
 [1.0.0]: https://github.com/ilmakio/paint-macos/releases/tag/v1.0.0

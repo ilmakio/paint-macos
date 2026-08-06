@@ -17,5 +17,10 @@ dist/
 .env.release
 .env.release.local
 
+# Icon Composer scratch files. The copy the build compiles is
+# Paint/AppIcon.icon; these are a working duplicate and its raster exports.
+/AppIcon.icon/
+AppIcon Exports/
+
 # macOS
 .DS_Store
